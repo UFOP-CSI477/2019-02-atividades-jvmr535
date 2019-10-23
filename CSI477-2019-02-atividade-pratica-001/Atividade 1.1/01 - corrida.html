@@ -2,7 +2,8 @@
 <html lang="br" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <link rel = "stylesheet" href = "./css/bootstrap.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <title>Corrida</title>  
     </head>
     
@@ -74,42 +75,66 @@
         </table>
 
         <form id = "apuracao">
-            <input type = "button" value="Apurar" onclick ="apuracao()" class ="btn btn-primary"></input>
+            <input type = "button" value="Apurar" onclick ="apurar()" class ="btn btn-primary"></input>
         </form>
 
         <script>
             table = document.getElementById("tb1");
             
-            let i = 1;
+            var i = 1;
 
-            let largada;
-            let competidor;
-            let tempo;
+            var largada;
+            var competidor;
+            var tempo;
 
             function addNaTabela(){
-                
-                
+
                 largada = document.getElementsByName("largada");
                 largada = largada[0].value;
-                
                 
                 competidor = document.getElementsByName("competidor");
                 competidor = competidor[0].value;
                 
-                
                 tempo = document.getElementsByName("tempo");
                 tempo = tempo[0].value;
 
-                
                 table.rows[i].cells[0].innerHTML = largada;
                 table.rows[i].cells[1].innerHTML = competidor;
                 table.rows[i].cells[2].innerHTML = tempo;
                
-                i++;    
+                i++;       
             } 
 
-            function apuracao(){
+            function apurar() {
+                var rows, switching, i, x, y, shouldSwitch;
                 
+                loop = true;
+                
+                while (loop) {
+                    loop = false;
+                    rows = table.rows;
+                    
+                    for (i = 1; i < (rows.length - 1); i++) {
+                    
+                    shouldSwitch = false;
+                    
+                    x = table.rows[i].cells[2];
+                    y = table.rows[i + 1].cells[2];
+                    
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                    }
+                    if (shouldSwitch) {
+                    
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    loop = true;
+                    }
+                }
+
+                table.rows[1].cells[3].innerHTML = "Vencedor(a)!";
+
             }
 
         </script>
