@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel = "stylesheet" href = "./css/bootstrap.css">
+        
+        <script src = calculo-imc.js></script>
+        
+        <title>1.2 Cálculo do IMC</title>
+    </head>
+    <body>
+        <form name = "dados">
+            <div id = "grupo1" class = "form-group">
+                <label for="peso" id = "label1">Peso</label>
+                <input type="text" name="peso" value="" class="form-control">
+
+                <div id = "alerta1" class = "alert alert-danger" style = "display: none">
+                    <div class = "alert alert-danger">
+                            Dados inválidos!
+                    </div>
+                </div>
+            </div>
+
+            <div id = "grupo2" class = "form-group">
+                <label for="altura" id = "label2">Altura</label>
+                <input type="text" name="altura" value="" class="form-control">
+
+                <div id = "alerta2" class = "alert alert-danger" style = "display: none">
+                    <span>Preencha a altura corretamente!</span>
+                </div>
+            </div>
+
+            <div id = "resultado" class = "form-group">
+                <label for = "resultado">Resultado</label>
+                <input type = "text" name = "resultado" id = "resultado" value = "" class = "form-control">
+            </div>
+
+            <input type="button" value="calcular" onclick="calcularIMC()" class ="btn btn-primary">
+            <input type="reset" name="" value="Limpar" class="btn btn-warning">
+        </form>
+        
+    </body>
+</html>

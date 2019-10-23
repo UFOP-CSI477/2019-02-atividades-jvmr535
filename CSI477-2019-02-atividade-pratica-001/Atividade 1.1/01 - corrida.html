@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel = "stylesheet" href = "./css/bootstrap.css">
+        <title>Corrida</title>  
+    </head>
+    
+    <body>
+        <h1 style="font-family: Comic Sans MS; color: blue">Corrida de Carrinhos de Rolimã</h1>  
+
+        <form id = "dados">
+            <div>
+                <label for="largada" id = "label1">Largada</label>
+                <input type="text" name = "largada" value="" class="form-control">
+            </div>
+
+            <div>
+                <label for="competidor" id = "label2">Competidor</label>
+                <input type="text" name = "competidor" value="" class="form-control">
+            
+            </div>
+                
+            <div>
+                <label for="tempo" id = "label3">Tempo</label>
+                <input type="text" name = "tempo" value="" class="form-control">
+            </div>
+            
+            </br> 
+
+            <input type="button" value="Adicionar" onclick= "addNaTabela()" class ="btn btn-primary">
+            <input type="reset" name="" value="Limpar" class="btn btn-warning">
+            
+        </form>
+        
+        </br> 
+        
+        <table id = "tb1" class = "table table-bordered table-hover table-striped">
+            <thead class = "thead-dark">
+                <tr>
+                    <th>Largada</th>
+                    <th>Competidor(a)</th>
+                    <th>Tempo</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td></td> <td></td> <td></td> <td></td>   
+                </tr>
+
+                <tr>
+                    <td></td> <td></td> <td></td> <td></td>   
+                </tr>
+
+                <tr>
+                    <td></td> <td></td> <td></td> <td></td>   
+                </tr>
+
+                <tr>
+                    <td></td> <td></td> <td></td> <td></td>  
+                </tr>
+
+                <tr>
+                    <td></td> <td></td> <td></td> <td></td>  
+                </tr>
+
+                <tr>
+                    <td></td> <td></td> <td></td> <td></td> 
+                </tr>
+            </tbody>
+
+        </table>
+
+        <form id = "apuracao">
+            <input type = "button" value="Apurar" onclick ="apuracao()" class ="btn btn-primary"></input>
+        </form>
+
+        <script>
+            table = document.getElementById("tb1");
+            
+            let i = 1;
+
+            let largada;
+            let competidor;
+            let tempo;
+
+            function addNaTabela(){
+                
+                
+                largada = document.getElementsByName("largada");
+                largada = largada[0].value;
+                
+                
+                competidor = document.getElementsByName("competidor");
+                competidor = competidor[0].value;
+                
+                
+                tempo = document.getElementsByName("tempo");
+                tempo = tempo[0].value;
+
+                
+                table.rows[i].cells[0].innerHTML = largada;
+                table.rows[i].cells[1].innerHTML = competidor;
+                table.rows[i].cells[2].innerHTML = tempo;
+               
+                i++;    
+            } 
+
+            function apuracao(){
+                
+            }
+
+        </script>
+    </body>
+</html>
