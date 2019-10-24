@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<html lang="br" dir="ltr">
+<html lang = "br" dir = "ltr">
+    
     <head>
         <meta charset="utf-8">
+
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         
-        <script src = calculo-imc.js></script>
-        
-        <title>1.2 Cálculo do IMC</title>
+        <script src = calculo-magnitude.js></script>
+
+        <title>1.3 Escala Richter</title>
     </head>
+    
     <body>
         <form name = "dados">
             <div id = "grupo1" class = "form-group">
-                <label for="peso" id = "label1">Peso</label>
-                <input type="text" name="peso" value="" class="form-control">
+                <label for="amplitude" id = "label1">Amplitude</label>
+                <input type="text" name="amplitude" value="" class="form-control">
             </div>
 
             <div id = "grupo2" class = "form-group">
-                <label for="altura" id = "label2">Altura</label>
-                <input type="text" name="altura" value="" class="form-control">
+                <label for="intervaloTempo" id = "label2">Intervalo de Tempo</label>
+                <input type="text" name="intervaloTempo" value="" class="form-control">
             </div>
 
-            <div id = "resultado" class = "form-group">
-                <label for = "resultado">Resultado</label>
-                <input type = "text" name = "resultado" id = "resultado" value = "" class = "form-control" disabled>
+            <div id = "magnitude" class = "form-group">
+                <label for = "magnitude">Magnitude Richter</label>
+                <input type = "text" name = "magnitude" id = "magnitude" value = "" class = "form-control" disabled>
             </div>
 
-            <input type="button" value="calcular" onclick="calcularIMC()" class ="btn btn-primary">
+            <input type="button" value="calcular" onclick="calcular_magnitude()" class ="btn btn-primary">
             <input type="reset" name="" value="Limpar" class="btn btn-warning">
         </form>
         
