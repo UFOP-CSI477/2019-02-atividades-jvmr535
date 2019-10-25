@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang = "br" dir = "ltr">
+    <head>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+        <title>1.4 Atividade didática para crianças</title>
+    </head>
+
+    <body>
+        <form id = "escolhas">
+            <h1 style="font-family: Times New Roman; color: black">Qual dos elementos não pertence ao grupo?</h1>
+            </br>
+
+            <p style="font-family: Times New Roman; color: black">Grupo 1:</p>
+
+            <div id = "grupo1" class = "form-group">
+            
+                <img width="100px" height="100px" src="Grupo 1/Arroz.jpg"/> 
+                <input type = "radio" id = "arroz" name = "objeto" value = "arroz"><label for = masculino>Arroz</label><br>
+                
+                <img width="100px" height="100px" src="Grupo 1/Batata.png"/> 
+                <input type = "radio" id = "batata" name = "objeto" value = "batata" ><label for = batata>Batata</label><br>
+        
+                <img width="100px" height="100px" src="Grupo 1/Feijao.jpg"/> 
+                <input type = "radio" id = "feijao" name = "objeto" value = "feijao"><label for = feijao>Feijão</label><br>
+            
+                <img width="100px" height="100px" src="Grupo 1/Sabonete.png"/> 
+                <input type = "radio" id = "sabonete" name = "objeto" value = "sabonete"><label for = sabonete>Sabonete</label><br>
+
+                <input type="button" value="calcular" onclick="validacao1()" class ="btn btn-primary" checked>
+                
+            </div>
+            </br>
+
+            <p style="font-family: Times New Roman; color: black">Grupo 2:</p>
+
+            <div id = "grupo2" class = "form-group">
+            
+                <img width="100px" height="100px" src="Grupo 2/Algodao Doce.jpg"/> 
+                <input type = "radio" id = "algodaoDoce" name = "objeto" value = "algodaoDoce" ><label for = algodaoDoce>Algodão Doce</label><br>
+        
+                <img width="100px" height="100px" src="Grupo 2/Bicicleta.jpg"/> 
+                <input type = "radio" id = "bicicleta" name = "objeto" value = "bicicleta"><label for = bicicleta>Bicicleta</label><br>
+
+                <img width="100px" height="100px" src="Grupo 2/Carro.jpg"/> 
+                <input type = "radio" id = "carro" name = "objeto" value = "carro"><label for = carro>Carro</label><br>
+
+                <img width="100px" height="100px" src="Grupo 2/Moto.jpg"/> 
+                <input type = "radio" id = "moto" name = "objeto" value = "moto"><label for = moto>Moto</label><br>
+                
+                <input type="button" value="calcular" onclick="validacao2()" class ="btn btn-primary">   
+            </div>
+            </br>
+
+            <p style="font-family: Times New Roman; color: black">Grupo 3:</p>
+
+            <div id = "grupo3" class = "form-group">
+            
+                <img width="100px" height="100px" src="Grupo 3/Cadeira de Praia.jpg"/> 
+                <input type = "radio" id = "cadeiraDePraia" name = "objeto" value = "cadeiraDePraia" ><label for = cadeiraDePraia>Cadeira de Praia</label><br>
+        
+                <img width="100px" height="100px" src="Grupo 3/Maquina de Lavar.jpg"/> 
+                <input type = "radio" id = "maquinaDeLavar" name = "objeto" value = "maquinaDeLavar"><label for = maquinaDeLavar>Maquina de Lavar</label><br>
+
+                <img width="100px" height="100px" src="Grupo 3/Oculos.jpg"/> 
+                <input type = "radio" id = "oculos" name = "objeto" value = "oculos"><label for = oculos>Oculos</label><br>
+
+                <img width="100px" height="100px" src="Grupo 3/Sombrinha.jpg"/> 
+                <input type = "radio" id = "sombrinha" name = "objeto" value = "sombrinha"><label for = sombrinha>Sombrinha</label><br>
+                
+                <input type="button" value="calcular" onclick="validacao3()" class ="btn btn-primary">   
+            </div>
+            </br>
+
+            <p style="font-family: Times New Roman; color: black">Grupo 4:</p>
+
+            <div id = "grupo4" class = "form-group">
+            
+                <img width="100px" height="100px" src="Grupo 4/Bola.png"/> 
+                <input type = "radio" id = "bola" name = "objeto" value = "bola" ><label for = bola>Bola</label><br>
+        
+                <img width="100px" height="100px" src="Grupo 4/Chave de Fenda.JPG"/> 
+                <input type = "radio" id = "caveDeFenda" name = "objeto" value = "caveDeFenda"><label for = chaveDeFenda>Chave de Fenda</label><br>
+
+                <img width="100px" height="100px" src="Grupo 4/Patins.jpg"/> 
+                <input type = "radio" id = "patins" name = "objeto" value = "patins"><label for = patins>Patins</label><br>
+
+                <img width="100px" height="100px" src="Grupo 4/Skate.jpg"/> 
+                <input type = "radio" id = "skate" name = "objeto" value = "skate"><label for = skate>Skate</label><br>
+                
+                <input type="button" value="calcular" onclick="validacao4()" class ="btn btn-primary">
+            </div>
+            </br>
+        </form>
+    </body>
+
+    <script>
+
+        function validacao1(){
+            
+        }
+        
+        function validacao2(){
+
+        }
+
+        function validacao3(){
+
+        }
+
+        function validacao4(){
+
+        }
+    </script>
+</html>
