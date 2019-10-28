@@ -3,8 +3,15 @@ function calcularIMC(){
     peso = peso[0].value;
     let altura = document.getElementsByName("altura");
     altura = altura[0].value;
-    
-    let calculo = peso / Math.pow(altura, 2);
+
+    let calculo;
+
+    if(isNaN(parseFloat(peso)) == false || isNaN(parseFloat(altura)) == false){
+        calculo = peso / Math.pow(altura, 2);  
+    }
+    else{
+        alert("Entrada de Dados Inválida");       
+    }
 
     if(calculo < 18.5){
         let resaux = document.getElementsByName("resultado");
