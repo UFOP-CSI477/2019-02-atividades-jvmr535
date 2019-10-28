@@ -20,7 +20,7 @@ function addNaTabela(){
     tempo = tempo[0].value;
 
     if(i < 7){
-        if(!isNaN(parseFloat(largada)) && isNaN(parseFloat(competidor)) && !isNaN(parseFloat(tempo))){ 
+        if(!isNaN(parseFloat(largada)) && isNaN(parseFloat(competidor)) && !isNaN(parseFloat(tempo)) && largada.length != 0 && competidor.length != 0 && tempo.length != 0){ 
             table.rows[i].cells[1].innerHTML = largada;
             table.rows[i].cells[2].innerHTML = competidor;
             table.rows[i].cells[3].innerHTML = tempo;
@@ -36,14 +36,18 @@ function addNaTabela(){
     }
 } 
 
-function apurar() {
+function apurar(){
+    //table = document.getElementById("tb1");
     var rows, switching, i, x, y, shouldSwitch;
     
     loop = true;
     
+    let posicao = 1;
+
+    rows = table.rows;
+
     while (loop) {
         loop = false;
-        rows = table.rows;
         
         for (i = 1; i < (rows.length - 1); i++) {
             shouldSwitch = false;
@@ -51,7 +55,7 @@ function apurar() {
             x = table.rows[i].cells[3];
             y = table.rows[i + 1].cells[3];
             
-            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            if (Number(x.innerHTML) > Number(y.innerHTML)) {
                 shouldSwitch = true;
                 break;
             }
@@ -60,8 +64,13 @@ function apurar() {
         
             rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
             loop = true;
+            
         }
     }
+    table.rows[1].cells[4].innerHTML = "Vencedor(a)!";
+    for(let contador2 = 1; contador2 <= 7; contador2++){
+        table.rows[contador2].cells[0].innerHTML = contador2+"º";
+    }
 
-    table.rows[contador].cells[4].innerHTML = "Vencedor(a)!";
+        
 }
