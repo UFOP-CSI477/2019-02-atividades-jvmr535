@@ -15,14 +15,15 @@
             <div class="card card-signin my-5">
                 <div class="card-body">
                 <h5 class="card-title text-center">Log In</h5>
-                <form class="form-signin">
+                <form class="form-signin" action="{{route('site.login.entrar')}}" method="post">
+                    {{ csrf_field() }}
                     <div class="form-label-group">
-                    <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
+                    <input type="email" id="inputEmail" name= "email" class="form-control" placeholder="E-mail" required autofocus>
                     <label for="inputEmail">E-mail</label>
                     </div>
     
                     <div class="form-label-group">
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                    <input type="password" id="inputPassword" name= "password" class="form-control" placeholder="Senha" required>
                     <label for="inputPassword">Senha</label>
                     </div>
     

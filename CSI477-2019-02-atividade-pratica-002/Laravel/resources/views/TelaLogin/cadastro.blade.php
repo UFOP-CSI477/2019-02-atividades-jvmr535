@@ -15,19 +15,21 @@
             <div class="card card-signin my-5">
                 <div class="card-body">
                 <h5 class="card-title text-center">Cadastro</h5>
-                <form class="form-signin">
+                
+                <form class="form-signin" method="POST" action="/cadastro/salvar">
+                    {{  csrf_field()  }}
                     <div class="form-label-group">
-                        <input type="user" id="inputUser" class="form-control" placeholder="Nome" required autofocus>
+                        <input type="user" id="inputUser" name="name" class="form-control" placeholder="Nome" required autofocus>
                         <label for="inputUser">Nome</label>
                     </div>
                     
                     <div class="form-label-group">
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
                         <label for="inputEmail">E-mail</label>
                     </div>
     
                     <div class="form-label-group">
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Senha" required>
                         <label for="inputPassword">Senha</label>
                     </div>
     
@@ -36,7 +38,7 @@
                         <label class="custom-control-label" for="customCheck1">Lembrar-se de mim</label>
                     </div>
                     
-                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Cadastrar</button>
+                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" >Cadastrar</button>
                     <hr class="my-4">
                     <a href="{{ url('login') }}" class="btn btn-lg btn-google btn-block text-uppercase">Já possui conta?</a>
                 </form>

@@ -9,15 +9,26 @@
     <!-- Links - menu lateral //-->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #563D7C;">
 
-      <span class="navbar-brand mb-0 h1">Acadêmico</span>
+      <span class="navbar-brand mb-0 h1">Protocolos</span>
 
       <ul class="navbar-nav">
           <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="/welcome" class="nav-link">Sobre</a></li>
-          <li class="nav-item"><a href="/listar" class="nav-link">Listar pessoas</a></li>
+          @if(Auth::guest())
+              <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+          @else
+            <li class="nav-item"><a href="/listar" class="nav-link">Listar Protocolos</a></li>
+            
           {{-- <li class="nav-item"><a href="{{ route('cidades.index') }}" class="nav-link">Cidades</a></li> --}}
-      </ul>
+          @endif
+        </ul>
     </nav>
+
+    <!-- Exibir mensagens -> sessao: campo: mensagem //-->
+    @if ( Session::has('mensagem') )
+      <div class="alert alert-success">
+        <strong>{{ Session::get('mensagem') }}</strong>
+      </div>
+    @endif
 
     <!-- Conteúdo -- parte central //-->
     @yield('conteudo')

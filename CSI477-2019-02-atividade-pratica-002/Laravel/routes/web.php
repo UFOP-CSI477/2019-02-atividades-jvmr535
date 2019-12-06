@@ -11,10 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/login', ['uses' => "LoginController@index"]);
-Route::get('/cadastro', ['uses' => "CadastroController@index"]);
+Route::get('/', ['as' =>'site.home', 'uses' => "HomeController@index"]);
+
+Route::get('/login', ['as' =>'site.login', 'uses' => "LoginController@index"]);
+Route::post('/login/entrar', ['as' =>'site.login.entrar', 'uses' => "LoginController@entrar"]);
+Route::post('/login/sair', ['as' =>'site.login.sair', 'uses' => "LoginController@sair"]);
+
+Route::get('/cadastro', ['uses' => "UserController@create"]);
+Route::post('/cadastro/salvar', ['uses' => "UserController@store"]);
+
 Route::get('/lista', ['uses' => "ListaController@index"]);
